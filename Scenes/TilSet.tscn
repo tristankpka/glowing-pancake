@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Data/Map/Isometric/stoneTile_W.png" type="Texture" id=1]
+[ext_resource path="res://Data/Map/Isometric/stone_W.png" type="Texture" id=2]
+[ext_resource path="res://Data/Map/Isometric/stoneWall_S.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="stoneTile_W" type="Sprite" parent="." index="0"]
+
+position = Vector2( 130, 260 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 342, 256, 172 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="stone_W" type="Sprite" parent="." index="1"]
+
+position = Vector2( 490, 260 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 342, 256, 172 )
+_sections_unfolded = [ "Region" ]
+
+[node name="stoneWall_S" type="Sprite" parent="." index="2"]
+
+position = Vector2( 840, 260 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 322, 256, 172 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stoneWall_S" index="0"]
+
+position = Vector2( 0, -0.663422 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stoneWall_S/StaticBody2D" index="0"]
+
+position = Vector2( -3.07617, -150.638 )
+build_mode = 0
+polygon = PoolVector2Array( -125.556, 161.119, 2.56293, 234.561, 33.2985, 217.414, -96.438, 143.001 )
+
+
